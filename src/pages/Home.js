@@ -1,17 +1,25 @@
 /* eslint-disable */
-import React, {useState} from 'react'
-import ActorGrid from '../components/actor/ActorGrid';
+import React, { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout'
-import ShowGrid from '../components/show/ShowGrid';
 import {apiGet} from '../misc/config'
+import ShowGrid from '../components/show/ShowGrid';
+import ActorGrid from '../components/actor/ActorGrid';
 
 function Home()  {
   const [input, setInput] = useState('');
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState('shows');
-
+  
   const isShowsSearch = searchOption === 'shows';
-
+  
+  
+  
+  const onSearch = () =>{ 
+      apiGet(`/search/${searchOption}?q=${input}`)
+      .then(result => {
+        setResults(result);
+      }); 
+  };
 
   const onInputChange = (ev) =>{
    setInput(ev.target.value);
@@ -23,13 +31,6 @@ const onKeyDown = ev =>{
   }
 }
 
-  const onSearch = () =>{ 
-
-      apiGet(`/search/${searchOption}?q=${input}`)
-      .then(result => {
-        setResults(result);
-      }) 
-  }
 
 
 
@@ -58,7 +59,6 @@ const onKeyDown = ev =>{
 
   return (
    <MainPageLayout>
-
     <input 
     type="text" 
     placeholder='Search for something'
