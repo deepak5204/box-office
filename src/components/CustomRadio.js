@@ -54,10 +54,10 @@ const RadioWrapper = styled.label`
 `;
 
 
-function CustomRadio( {label, ...restProps}) {
+function CustomRadio({ label, ...restProps }) {
   return (
     <RadioWrapper htmlFor={restProps.id}>
-    Shows
+    {label}
     <input { ...restProps } type="radio" />
     <span />
     </RadioWrapper>

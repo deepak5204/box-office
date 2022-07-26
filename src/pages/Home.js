@@ -53,7 +53,7 @@ const onKeyDown = ev =>{
    <MainPageLayout>
     <SearchInput 
       type="text" 
-      placeholder='wow'
+      placeholder="Search for something"
       onChange = { onInputChange } 
       onKeyDown={onKeyDown} 
       value= {input}
@@ -70,9 +70,8 @@ const onKeyDown = ev =>{
         />    
       </div>
 
-
-      <div>
-        <CustomRadio 
+        <div>
+         <CustomRadio 
           label="Actors"
           id='actors-search' 
           value="people"
@@ -80,17 +79,13 @@ const onKeyDown = ev =>{
           onChange={onRadioChange} 
         />    
       </div>
-
-
     </RadioInputsWrapper>
 
-      <SearchButtonWrapper>
-
-      <button type="button" 
-        onClick={onSearch}>
+    <SearchButtonWrapper>
+      <button type="button" onClick={onSearch}>
           Search
       </button>
-          </SearchButtonWrapper>
+    </SearchButtonWrapper>
       {renderResults()}
    </MainPageLayout>
   )
