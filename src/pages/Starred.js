@@ -47,4 +47,5 @@ useEffect( () =>{
   )
 }
 
-export default Starred
+export default Starred;
+
