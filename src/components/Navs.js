@@ -1,6 +1,6 @@
 /*eslint-disable*/
 
-import React from 'react';
+import React, { memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { LinkStyled, NavList } from './Navs.styled';
@@ -31,4 +31,4 @@ console.log(location);
   )
 }
 
-export default Navs;
+export default memo(Navs);
