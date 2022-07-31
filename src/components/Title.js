@@ -1,16 +1,13 @@
-import React, { memo } from 'react'
-import { TitleWrapper } from './Title.styled'
+import React, { memo } from 'react';
+import { TitleWrapper } from './Title.styled';
 
-function Title( {title, subtitle } ) {
-
-
-
+function Title  ({ title, subtitle })  {
   return (
     <TitleWrapper>
-      <h1> {title} </h1>
-      <p> {subtitle} </p>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
     </TitleWrapper>
-  )
-}
+  );
+};
 
 export default memo(Title);

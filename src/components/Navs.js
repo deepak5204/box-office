@@ -1,34 +1,32 @@
-/*eslint-disable*/
-
 import React, { memo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import { LinkStyled, NavList } from './Navs.styled';
-
-// import { useLocation } from 'react-router-dom';
+import { NavList, LinkStyled } from './Navs.styled';
 
 const LINKS = [
-  {to: '/', text: 'Home'},
-  {to: '/starred', text: 'starred'}
-]
+  { to: '/', text: 'Home' },
+  { to: '/starred', text: 'Starred' },
+];
 
-
-function Navs() {
-const location = useLocation();
-console.log(location);
+function Navs () {
+  const location = useLocation();
 
   return (
     <div>
       <NavList>
-        {
-          LINKS.map((item) => (
-             <LinkStyled to={item.to} className={item.to === location.pathname ? 'active' : ''}> {item.text}</LinkStyled>
-          ))
-        }
-      
+        {LINKS.map(item => (
+          <li key={item.to}>
+            <LinkStyled
+              to={item.to}
+              className={item.to === location.pathname ? 'active' : ''}
+            >
+              {item.text}
+            </LinkStyled>
+          </li>
+        ))}
       </NavList>
     </div>
-  )
-}
+  );
+};
 
 export default memo(Navs);
