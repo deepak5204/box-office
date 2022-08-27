@@ -23,7 +23,7 @@
       "react/no-danger": [0],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      "requireReturnForObjectLiteral": 0
+      "requireReturnForObjectLiteral": [0]
    
     
     
